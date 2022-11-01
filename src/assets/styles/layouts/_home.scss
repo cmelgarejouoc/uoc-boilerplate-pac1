@@ -297,10 +297,12 @@
     text-decoration: none;
   }
 
-  body > header > div > svg {
+  body > header > div > img {
     // Box model
     width: 11.2rem;
     height: auto;
+    margin-right: auto;
+    margin-left: auto;
   }
 
 
