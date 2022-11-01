@@ -42,6 +42,14 @@
     font-family: $font-family-sans-serif;
     font-size: 2.4vw;
     color: $main-font-color;
+
+    @media screen and (min-width: 667px){
+      font-size: 0.8vw;
+    }
+
+     @media screen and (min-width: 1030px){
+      font-size: 10px;
+    }   
   }
 
 
@@ -61,6 +69,13 @@
     line-height: 1.6;
     color: $secondary-font-color;
     text-align: center;
+
+    @media screen and (min-width: 1030px){
+      // Typography
+      font-size: 4.4rem;
+      font-weight: 400;
+      line-height: 1.4;
+    }
   }
 
 
@@ -124,6 +139,15 @@
     font-size: 1.4rem;
     line-height: 1.6;
     color: $main-font-color;
+
+    @media screen and (min-width: 1030px){
+      // Box model
+      margin-bottom: 1.4rem;
+
+      // Typography
+      font-size: 1.3rem;
+      line-height: 1.4;
+    } 
   }
 
 
@@ -242,12 +266,22 @@
       .hamburger__open { /* [1] */
         // Box model
         display: block;
+
+        @media screen and (min-width: 1030px){
+          // Box model
+          display: none;
+        }
       }
 
       .hamburger__close { /* [2] */
         // Positioning
         left: 5px;
       }
+
+    @media screen and (min-width: 1030px){
+      // Positioning
+      position: initial;
+    }
   }
 
 
@@ -282,6 +316,13 @@
       font-weight: 800;
       color: #5f030e;
     }
+
+    @media screen and (min-width: 1030px){
+      // Box model
+      height: auto;
+      padding-top: 4rem;
+      padding-bottom: 0;
+    }  
   }
 
 
@@ -322,6 +363,14 @@
   }
 
 
+  main > section {
+    @media screen and (min-width: 1030px){
+      // Box model
+      padding-bottom: 2rem;
+    }  
+  }
+
+
   main > section > h2, main > section > ul, 
   article {
     // Box model
@@ -329,6 +378,7 @@
     padding-right: 4.5rem;
     padding-left: 4.5rem;
   }
+
 
 
   /**
@@ -342,6 +392,11 @@
   main > section:nth-of-type(2) article { /* [1] */
     // Box model
     display: none;
+
+    @media screen and (min-width: 1030px){
+      // Box model
+      padding-bottom: 3rem;
+    }  
   }
 
 
@@ -362,7 +417,31 @@
   main > section:nth-of-type(1) article:nth-of-type(3) {
     // Visual
     scroll-margin-top: 14rem;
+
+    @media screen and (min-width: 1030px){
+      // Visual
+      scroll-margin-top: 16.8rem;
+    }  
   }
+
+
+
+  main > section:nth-of-type(1) {
+    @media screen and (min-width: 1030px){
+      // Box model
+      display: grid;
+      grid-template-columns: 1.8fr 1.2fr;
+    }  
+  }
+
+  main > section:nth-of-type(1) div {
+    @media screen and (min-width: 1030px){
+      // Box model
+      display: flex;
+      flex-direction: row-reverse;
+    }  
+  }
+
 
 
   main > section > ul {
@@ -387,12 +466,26 @@
     // Box model
     width: 100rem;
     height: auto;
+
+    @media screen and (min-width: 1030px){
+      // Box model
+      width: 283px;
+    }  
   }
 
 
   main > section:last-child {
     // Box model
     padding: 7rem 2.2rem 2.2rem 2rem;
+
+    @media screen and (min-width: 1030px){
+      // Box model
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 4rem;
+      padding-right: 4rem;
+      padding-left: 4rem;
+    }
   }
 
 
@@ -400,6 +493,8 @@
     // Typography
     font-weight: 600;
   }
+
+
 
 
   /**
@@ -412,6 +507,19 @@
 
     // Visual
     background-color: $carles-bg; /* [1] */
+
+    @media screen and (min-width: 1030px){
+      // Box model
+      padding-bottom: 2.5rem;
+    }  
+  }
+
+  main > section:nth-of-type(1) > .seccio--destacada {
+    @media screen and (min-width: 1030px){
+      // Visual
+      background-color: $secondary-font-color;
+      scroll-margin-top: 16.8rem;
+    }  
   }
 
 
@@ -437,6 +545,11 @@
         // Box model
         display: block;
       }
+    }
+
+    @media screen and (min-width: 1030px){
+      // Box model
+      display: none;
     }
   }
 
@@ -482,6 +595,11 @@
 
     // Visual
     background-color: #F5F5F5;
+
+    @media screen and (min-width: 1030px){
+      // Misc
+      cursor: pointer;
+    }
   }
 
 
@@ -501,6 +619,13 @@
     border-left-color: #2197F9; /* [1] */
     border-left-style: solid;
     border-left-width: 5px;
+
+    @media screen and (min-width: 1030px){
+      // Box model
+      width: 55.3rem;
+      margin-top: 3.5rem;
+      margin-bottom: 1.4rem;
+    }
   }
 
   .block--destacat > p {
@@ -540,6 +665,14 @@
   }
 
 
+  .site-footer > ul {
+    @media screen and (min-width: 1030px){
+      // Typography
+      text-align: center;
+    } 
+  }
+
+
   .site-footer > ul > li {
     // Box model
     margin-bottom: 1.2rem;
@@ -549,6 +682,14 @@
     color: $secondary-font-color;
     text-align: center;
     text-decoration: none;
+
+    @media screen and (min-width: 1030px){
+      // Box model
+      display: initial;
+      padding-right: 1.4rem;
+      padding-left: 1.4rem;
+      cursor: pointer;
+    } 
   }
 
 
@@ -566,6 +707,11 @@
     padding-left: 0;
     margin-right: auto;
     margin-left: auto;
+
+    @media screen and (min-width: 1030px){
+      // Box model
+      display: grid;
+    }
   }
 
 
@@ -622,6 +768,25 @@
           color: #9B9A9A;
           text-decoration: none;
           text-transform: uppercase;
+
+          @media screen and (min-width: 1030px){
+            // Box model
+            display: initial;
+            padding-right: 1.4rem;
+            padding-left: 1.4rem;
+            margin-bottom: 0;
+          }
+        }
+
+        li:hover {
+          @media screen and (min-width: 1030px){
+            // Typography
+            color: #5F030E;
+            text-decoration: underline;
+
+            // Misc
+            cursor: pointer;
+          }
         }
 
         .active {
@@ -629,6 +794,30 @@
           color: #5F030E;
           text-decoration: underline;
         }
+
+        @media screen and (min-width: 1030px){
+          // Box model
+          height: auto;
+          padding-top: 1rem;
+          padding-bottom: 2rem;
+          padding-left: 0;
+
+          // Typography
+          text-align: center;
+
+          // Visual
+          background-color: $secondary-font-color;
+        }
+      }
+
+      @media screen and (min-width: 1030px){
+        // Positioning
+        position: initial;
+
+        // Box model
+        width: 100%;
+        height: auto;
+        background-color: $secondary-font-color;
       }
     }
   }
