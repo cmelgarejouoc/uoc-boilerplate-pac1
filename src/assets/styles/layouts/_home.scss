@@ -1,57 +1,617 @@
-* {
-  box-sizing: border-box;
-}
+/**
+ *
+ * PAC1 - Carles Melgarejo
+ * Estils CSS amb estratègia 'Mobile first'
+ *
+ * CONTINGUT
+ *
+ * SETTINGS
+ * _variables.scss.................Variables globals.
+ *
+ * GENERIC
+ * Global-styles...................Estils genèrics per tota la pàgina.
+ * Icones contacte.................Estils genèrics per les icones.
+ * Cites i notes destacades........Estils genèrics de cites i notes.
+ * Hamburger-menu-styles...........Contenidor general menú hamburguesa.
+ *
+ * COMPONENTS
+ * Site-header-styles..............Header principal amb logo i menú.
+ * Site-main-styles................Contingut principal de la pàgina. 
+ * Site-footer-styles..............Footer principal de la pàgina.
+ */
 
-body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  margin: 0;
-  padding: 2rem;
-  font-family: $font-family-sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  background-color: $uoc-bg;
-  color: $uoc-corporate;
-}
 
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
 
-.uoc-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  max-width: 200px;
-  height: auto;
 
-  @media (min-width: $mqMinWidth) {
-    max-width: none;
+
+/*------------------------------------*\
+  #GLOBAL-STYLES
+\*------------------------------------*/
+
+  * {
+    // Box model
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-}
 
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: $uoc-corporate;
 
-  @media (min-width: $mqMinWidth) {
-    font-size: 36px;
+  html {
+    // Typography
+    font-family: $font-family-sans-serif;
+    font-size: 2.4vw;
+    color: $main-font-color;
   }
-}
 
-.uoc-footer {
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  text-align: center;
-}
+
+  body {
+    // Misc
+    cursor: initial;
+  }
+
+
+  h1 {
+    // Box model
+    padding: 6rem 2rem 6rem 2rem;
+
+    // Typography
+    font-size: 2.7rem;
+    font-weight: 600;
+    color: $secondary-font-color;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+
+  h2 {
+    // Box model
+    margin-bottom: 2rem;
+    
+    // Typography
+    font-size: 2.2rem;
+    color: #A6A5A5;
+  }
+
+
+  a {
+    // Typography
+    color: $main-font-color;
+  }
+
+
+  abbr {
+    // Typography
+    text-decoration: none;
+  }
+
+
+  ul {
+    // Visual
+    list-style: none;
+  }
+
+
+  picture {
+    // Box model
+    display: block;
+    margin-bottom: 8rem;
+
+    // Visual
+    box-shadow: 0 5px 8px #4a4a4a33;
+
+    img {
+      // Box model
+      width: 100%;
+    }
+  }
+
+  img {
+    // Box model
+    max-width: 100%;
+    display: block;
+  }
+
+
+  p,
+  li,
+  cite {
+    // Box model
+    margin-bottom: 2.4rem;
+
+    // Typography
+    font-size: 1.4rem;
+    color: $main-font-color;
+    line-height: 1.6;
+  }
+
+
+  i {
+    // Typography
+    font-style: initial;
+  }
+
+
+
+  /**
+    * Com que l'icona de Linkedin i del correu apareixen tant al menú
+    * com al footer ho poso aquí, com a definició més genèrica.
+    */
+
+  .fa-linkedin-in {
+    // Box model
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+
+    // Typography
+    font-size: 2.5rem;
+    color: $secondary-font-color;
+
+    // Visual
+    background-color: #bdbdbd;
+    border-radius: 2.2rem;
+  }
+
+  .fa-envelope {
+    // Typography
+    font-size: 4.2rem;
+    color: #bdbdbd;
+  }
+
+
+
+  /**
+    * Cites i notes destacades
+    * les dues icones per accedir i tancar el menú.
+    *
+    * 1. Colors per les cites del final
+    * 2. Colors per la nota destacada de la Trajectòria laboral
+    */
+
+  blockquote,
+  .block--destacat {
+    // Box model
+    margin-bottom: 4.2rem;
+    padding: 1.8rem 1.7rem 1.4rem;
+
+    // Visual
+    border-left-width: 5px;
+    border-left-style: solid;
+  }
+
+  blockquote { /* [1] */
+    // Visual
+    background-color: #FFFBF4;
+    border-left-color: #9A0315;
+  }
+
+  .block--destacat { /* [2] */
+    // Visual
+    background-color: #f4faff;
+    border-left-color: #2197F9;
+  }
+
+  blockquote > p,
+  .block--destacat > p {
+    // Box model
+    margin-bottom: 0;
+
+    // Typography
+    font-style: italic;
+  }
+
+  blockquote > cite,
+  .block--destacat > ul > li {
+    // Box model
+    display: block;
+  }
+
+  blockquote > cite > strong {
+    // Typography
+    font-weight: 600;
+  }
+
+  .block--destacat > ul > li {
+    // Box model
+    margin-bottom: 0;
+  }
+
+
+
+
+
+/*------------------------------------*\
+  #HAMBURGER-MENU-STYLES
+\*------------------------------------*/
+
+  /**
+    * Menú hamburguesa. Aquí només definim el contenidor general i
+    * les dues icones per accedir i tancar el menú.
+    *
+    * 1. Icona per obrir el menú
+    * 2. Icona per tancar el menú
+    */
+
+  .hamburger-menu {
+    // Positioning
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .hamburger {
+      // Positioning
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      // Box model
+      padding: 2rem 2rem 1.4rem 1.4rem;
+
+      // Typography
+      font-size: 3rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #5f030e;
+    }
+
+    .hamburger {
+      // Box model
+      display: none;
+    }
+
+      .hamburger__open { /* [1] */
+        // Box model
+        display: block;
+      }
+
+      .hamburger__close { /* [2] */
+        // Positioning
+        left: 5px;
+      }
+  }
+
+
+
+
+
+/*------------------------------------*\
+  #SITE-HEADER-STYLES
+\*------------------------------------*/
+
+  body > header {
+    // Positioning
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    // Box model
+    padding-top: 3.2rem;
+    padding-bottom: 4rem;
+    height: 34.4vw;
+
+    // Visual
+    background-color: $secondary-font-color;
+    box-shadow: 0 3px 16px rgb(74 74 74 / .2);
+    visibility: visible;
+    transition: opacity .5s linear;
+
+    // Misc
+    opacity: 1;
+
+    p {
+      // Typography
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #5f030e;
+    }
+  }
+
+
+  body > header > div {
+    // Box model
+    display: block;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+
+    // Typography
+    text-align: center;
+    text-decoration: none;
+  }
+
+  body > header > div > svg {
+    // Box model
+    width: 11.2rem;
+    height: auto;
+  }
+
+
+
+  /**
+    * Menú amb dues seccions fetes amb llistes desordenades ul, separant
+    * les dues icones de contacte dels elements de menú.
+    *
+    * 1. Elements de menú
+    * 2. Icones de contacte
+    */
+
+  body > header > nav {
+    aside {
+      // Positioning
+      position: absolute;
+      left: 0;
+      top: 34.4vw;
+
+      // Box model
+      width: 0;
+      height: 100vh;
+      
+      // Visual
+      background-color: #ededed;
+      transition: 0.5s;
+      overflow: hidden;
+
+      .menu-content { /* [1] */
+        // Box model
+        padding-left: 5rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        height: 75vh;
+
+        // Visual
+        background-color: #FFFBF4;
+
+        li {
+          // Box model
+          display: block;
+          padding-top: 1.2rem;
+          padding-bottom: 1.5rem;
+          
+          // Typography
+          font-family: $font-family-sans-serif;
+          font-size: 1.7rem;
+          line-height: 1;
+          font-weight: 800;
+          color: #9B9A9A;
+          text-transform: uppercase;
+          text-decoration: none;
+        }
+
+        .active {
+          // Typography
+          color: #5F030E;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+
+  .social-media { /* [2] */
+    // Box model
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+     width: 18rem;
+
+    li {
+      // Box model
+      margin-bottom: 0;
+
+      a {
+        // Box model
+        display: block;
+      }
+    }
+  }
+
+
+
+
+
+/*------------------------------------*\
+  #SITE-MAIN-STYLES
+\*------------------------------------*/
+
+  main > header {
+    // Visual
+    background-image: url("../images/background_480w.jpg");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+  }
+
+
+  main > section,
+  main > section:nth-of-type(1) article:nth-of-type(3) {
+    // Visual
+    scroll-margin-top: 14rem;
+  }
+
+  main > section > h2, main > section > ul, 
+  article {
+    // Box model
+    padding-top: 3rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+
+
+  main > section > ul {
+    // Box model
+    padding-left: 5.8rem;
+    padding-top: 0;
+  }
+
+  main > section > article > ul {
+    // Box model
+    padding-left: 1.3rem;
+  }
+
+  main > section > ul > li,
+  main > section > article > ul > li {
+    // Visual
+    list-style: disc;
+  }
+
+
+  main > section article > img {
+    // Box model
+    width: 100rem;
+    height: auto;
+  }
+
+
+  main > section:last-child {
+    // Box model
+    padding: 7rem 2.2rem 2.2rem 2rem;
+  }
+
+
+  main > section > ul > li strong {
+    // Typography
+    font-weight: 600;
+  }
+
+
+  /**
+   * 1. Algunes seccions tenen color de fons gris.
+   */
+
+  .seccio--destacada {
+    // Box model
+    padding-bottom: 1.5rem;
+
+    // Visual
+    background-color: $carles-bg; /* [1] */
+  }
+
+
+
+
+
+  /**
+    * Etiquetes d'anys a les que es pot navegar per swipe a mobile
+    * a mode de carroussel.
+    *
+    * 1. El text continua en una sola línia fins que no trobi un <br>
+    * 2. Si el contingut és més gran que el viewport no es mostra i apareixerien
+    *    les barres d'scroll.
+    * 3. Ocultem les barres d'scroll per Firefox.
+    * 4. Ocultem les barres d'scroll per Chrome, Safari i Opera
+    * 5. Estils per cadascuna de les etiquetes d'any
+    */
+
+  .submenu-carroussel {
+    // Box model
+    padding-top: 0;
+    padding-left: 4.7rem;
+    white-space: nowrap; /* [1] */
+    overflow: auto; /* [2] */
+
+    // Visual
+    scrollbar-width: none; /* [3] */
+  }
+
+  .submenu-carroussel::-webkit-scrollbar { /* [4] */
+    display: none;
+  }
+
+  .submenu-carroussel > li { /* [5] */
+    // Box model
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 1.6rem;
+    padding: 0.5rem 1.5rem;
+    width: max-content;
+
+    // Typography
+    font-weight: 800;
+    color: #A6A5A5;
+
+    // Visual
+    background-color: #F5F5F5;
+  }
+
+
+
+  /**
+    * Els continguts de cada any estan ocults fins que es fa click a una
+    * etiqueta d'any. El contingut de la primera és visible.
+    *
+    * 1. Contingut de cada any
+    * 2. Any visible
+    */
+
+  section:nth-of-type(2) article { /* [1] */
+    // Box model
+    display: none;
+  }
+
+
+  section:nth-of-type(2) .showYearContent { /* [2] */
+    // Box model
+    display: block;
+  }
+
+
+  section:nth-of-type(2) article > h2 {
+    // Typography
+    font-size: 1.6rem;
+    color: $main-font-color;
+  }
+
+
+
+
+
+/*------------------------------------*\
+  #SITE-FOOTER-STYLES
+\*------------------------------------*/
+
+  .site-footer {
+    // Box model
+    padding: 3rem 4.5rem;
+
+    // Visual
+    background-color: #525151;
+  }
+
+  .site-footer > p {
+    // Typography
+    color: $secondary-font-color;
+    text-align: center;
+  }
+
+
+  .site-footer > ul > li {
+    // Box model
+    margin-bottom: 1.2rem;
+
+    // Typography
+    font-weight: 600;
+    color: $secondary-font-color;
+    text-decoration: none;
+    text-align: center;
+  }
+
+
+
+  /**
+    * En el footer modifiquem una mica la caixa de les icones de contacte
+    * perquè quedi millor integrada al footer.
+    */
+
+  .site-footer .social-media {
+    // Box model
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 0;
+    width: 12rem;
+  }

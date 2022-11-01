@@ -1,27 +1,394 @@
-<!DOCTYPE html>
-
-<html>
+<!doctype html>
+<html lang="ca">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="author" content="Carles Melgarejo Vila">
+    <meta name="description" content="Carles Melgarejo: Full Stack Developer, analista i desenvolupador web - php, asp, python, mysql, CodeIgniter, Laravel">
+    <meta name="copyright" content="Carles Melgarejo 2022">
+
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;0,800;1,400;1,600;1,800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;0,800;1,400;1,600;1,800&display=swap"></noscript>
+
+    <link rel="stylesheet" href="./assets/styles/main.scss"><!-- do not remove this line! -->
+
+    <title>Full Stack Developer - Carles Melgarejo</title>
   </head>
+
   <body>
-    <div class="uoc-container">
-      <picture>
-        <source srcset="./assets/images/logo.png?as=webp&width=350" type="image/webp" />
-        <img src="./assets/images/logo.png?width=350" alt="Universitat Oberta de Catalunya" class="uoc-logo" />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
-    </div>
+    <include src="./views/header.html"></include>
+
+    <main>
+      <!-- HEADER -->
+      <header>
+        <h1>
+          Gran capacitat de treball en equip i comunicació.<br>
+          Gran capacitat d’adaptació i aprenentatge.
+        </h1>
+      </header>
+
+      <!-- DADES PERSONALS -->
+      <section id="dades-personals">
+        <article>
+          <img srcset="assets/images/carles_293w.jpg?as=webp, assets/images/carles_586w.jpg?as=webp 1.5x, assets/images/carles_586w.jpg?as=webp 2x" src="assets/images/carles_293w.jpg?as=webp" type="image/webp" alt="Carles Melgarejo: Full Stack Developer" loading="lazy" width="293" height="293">
+        </article>
+
+        <article>
+          <h2>
+            Dades personals
+          </h2>
+          <p>
+            <strong>Carles Melgarejo Vila</strong><br>
+            <strong>Enginyer Tècnic en Informàtica de Gestió</strong><br>
+            E-mail:   <a href="mailto:carles.melgarejo@gmail.com">carles.melgarejo@gmail.com</a><br>
+            Residència:    Barcelona<br>
+            Mòbil:    <a href="tel:+34696573072">696573072</a><br>
+            Web:    https://carlesmelgarejo.com/<br>
+            Linkedin:    <a href="https://www.linkedin.com/in/carlesmelgarejo/">https://www.linkedin.com/in/carlesmelgarejo/</a>
+          </p>
+        </article>
+
+        <article class="seccio--destacada" id="sobre-mi">
+          <h2>
+            Sobre mi...
+          </h2>
+
+          <ul>
+            <li>
+              Sóc una persona treballadora i responsable. Amb gran capacitat de treball en equip i comunicació. I gran capacitat d’adaptació i aprenentatge. Disposat sempre a la formació continua.
+            </li>
+            <li>
+              Sóc una persona constant, flexible i que m’agrada la feina ben feta.
+            </li>
+            <li>
+              De ment inquieta i amb capacitat d’anàlisi.
+            </li>
+            <li>
+              M’agrada el món de les <abbr title="Tecnologies de la informació i la comunicació">TIC</abbr>, són la meva feina i el meu hobbie alhora.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- TRAJECTÒRIA LABORAL -->
+      <section id="trajectoria-laboral">
+          <h2>
+            Trajectòria laboral
+          </h2>
+
+          <ul class="submenu-carroussel">
+            <li class="js-btn" data-year="2014">
+              2014 - actualitat
+            </li>
+
+            <li class="js-btn" data-year="2012">
+              2012  - actualitat
+            </li>
+
+            <li class="js-btn" data-year="2008">
+              2008 - 2011
+            </li>
+
+            <li class="js-btn" data-year="2003">
+              2003 - 2008
+            </li>
+
+            <li class="js-btn" data-year="2002">
+              2002
+            </li>
+
+            <li class="js-btn" data-year="2000">
+              2000 - 2001
+            </li>
+          </ul>
+
+          <article class="js-content showYearContent" data-year="2014">
+            <h2>
+              2014 - actualitat > <i lang="en">Full Stack Developer</i> a Malabars.
+            </h2>
+
+            <p>
+              Desenvolupament <i lang="en">frontend</i> i <i lang="en">backend</i> amb <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, <abbr title="My Structured Query Language">MySQL</abbr>, jQuery, <abbr title="HyperText Markup Language 5">html5</abbr>, <abbr title="Cascading Style Sheets 3">CSS3</abbr>, <abbr title="Syntactically Awesome StyleSheet">SASS</abbr>, Bootstrap, <i lang="en">responsive design</i>, en diferents projectes. Desenvolupament de <i lang="en">sites</i> amb  gestors de continguts  propis de Malabars fets en <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> i amb altres gestors com Wordpress. Implementació de plantilles. Shopify. Gestió remota de servidors. Gestió de dominis i zones <abbr title="Domain Name System">DNS</abbr> pels clients.
+            </p>
+
+            <p>
+              Clients pels qui he treballat, entre d’altres, des de Malabars: Tous, Castañer, Havaianas, Fundació Mercè Rodoreda, Trusbin, Miguel Vicente, Muy Mucho, Textura, Yasuni, Racc, Boboli, Grup Tramuntana, Dermik, La Perla 29, Montibello, Sport Cultura Barcelona, Pelostop, Benefit Lab, Revlon, Ajuntament de Sant Cugat ...
+            </p>
+
+            <p>
+              Sites que he desenvolupat entre d’altres: yasuni.com, basicgrup.com, miguelvicente.es,  maxiloclinic.com, centreortodonciahospitalet.com, themuseumapartments.com, masfalgarona.com, noima.net
+            </p>
+
+            <div class="block--destacat">
+              <p><i lang="en">Microsites</i>, pàgines i <i lang="en">landing pages</i> per:</p>
+
+              <ul>
+                <li>
+                  <strong>TOUS</strong> (<a href="https://www.tous.com/es-es/tous-100-x-100" target="_blank">https://www.tous.com/es-es/tous-100-x-100</a>)
+                </li>
+
+                <li>
+                  <strong>Castañer</strong> (<a href="https://www.castaner.com/brand/main.php?lang=es-es&page=atelier" target="_blank">https://www.castaner.com/brand/main.php?lang=es-es&page=atelier</a>)
+                </li>
+
+                <li>
+                  <strong>Havaianas</strong> (<a href="https://www.havaianas-store.com/es/perfect-size/size-guide.html" target="_blank">https://www.havaianas-store.com/es/perfect-size/size-guide.html</a>)
+                </li>
+
+                <li>
+                  <strong>Yasuni</strong> (<a href="https://www.yasuni.com/pro-race" target="_blank">https://www.yasuni.com/pro-race</a>)
+                </li>
+
+                <li>
+                  <strong>Textura</strong> (<a href="https://www.textura-interiors.com/brand/entre-suenos/index.html" target="_blank">https://www.textura-interiors.com/brand/entre-suenos/index.html</a>) ...
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="js-content" data-year="2012">
+            <h2>
+              2012 - actualitat > Analista i desenvolupador web <i lang="en">freelance</i>.
+            </h2>
+
+            <p>
+              Desenvolupament de <i lang="en">sites</i> per professionals independents com efonts.cat. <i lang="en">Backend</i> i <i lang="en">frontend</i> (php-CodeIgniter). Desenvolupament del <i lang="en">site</i> d’alittlenote.net.
+            </p>
+
+            <p>
+              Redisseny, reprogramació de plantilles, optimització d’estructura, noves funcionalitats, codi i <abbr title="Search Engine Optimization">SEO</abbr> per <i lang="en">site</i> paumats.com de l’empresa de parquets Paumats S.L. amb gestor de continguts WSCraft (php) utilitzant també galeries de jQuery com Fancybox.
+            </p>
+
+            <p>
+              Desenvolupament del <i lang="en">site</i> de euroamicanbridge.com amb gestor de continguts (php-CodeIgniter). Desenvolupament i <abbr title="Search Engine Optimization">SEO</abbr> per <i lang="en">site</i> mongoosetimber.com amb gestor de continguts (php-CodeIgniter) i Flash.
+            </p>
+
+            <p>
+              Desenvolupament, allotjament i <abbr title="Search Engine Optimization">SEO</abbr> per <i lang="en">site</i> baja.cat amb gestor de continguts (php-CodeIgniter). Desenvolupament, disseny i <abbr title="Search Engine Optimization">SEO</abbr> per portal del Club de Futbol Barceloneta amb gestor de continguts (php-CodeIgniter).
+            </p>
+
+            <p>
+              Treballs puntuals de programació per ludicum.com i per la intranet del Col·lectiu Ronda. Desenvolupament dels <i lang="en">sites</i> de yoga.telade.org i telade.org amb gestor de continguts (php-CodeIgniter) i passarel·la de pagament amb Paypal, així com desenvolupament del <i lang="en">site</i> de sonisord.com amb gestor de continguts (php-CodeIgniter) o consultoria en Internet pels diferents clients.
+            </p>
+          </article>
+
+          <article class="js-content" data-year="2008">
+            <h2>
+              2008 - 2011 > Analista i desenvolupador web a Whads-Accent.
+            </h2>
+
+            <p>
+              Programació en <abbr title="Active Server Pages">ASP</abbr>, Python, Javascript, <abbr title="PHP: Hypertext Preprocessor">php</abbr>, <abbr title="Cascading Style Sheets 2">CSS2</abbr>, i desenvolupament de <i lang="en">sites</i> amb gestors de continguts propis de Whads-Accent fets en <abbr title="Active Server Pages">ASP</abbr> i Python. Gestió remota de servidors amb Plesk. Gestió IIS6.0. Gestió de dominis i zones <abbr title="Domain Name System">DNS</abbr> pels clients. Formació als clients en les eines pròpies així com eines externes (Campaign Monitor, Email marketing, Google Apps, …). Gestió de campanyes d’email-marketing de clients amb Campaign Monitor, Octeth Oempro i Interspire Email Marketer. Consultoria en email <i lang="en">marketing</i>.
+            </p>
+
+            <p>
+              Clients pels qui he treballat des de Whads entre d’altres: Roca Sanitaris, Ajuntament de Barcelona, Fundació La Caixa, Síndic de Greuges, Laboratoris Leti, ATLL, Clínica Corachan, Fundació Internacional Josep Carreras, Educación Sin Fronteras, Fundació Caixa Catalunya, Fundación Adsis, ACRA, Fundació We Are Water, Editorial Fragmenta, Escola Massana, CRESIB ...
+            </p>
+
+            <p>
+              Sites que he desenvolupat o treballat en ells: conselldeciutat.cat, bcd.es, acra.es, fundacionadsis.org, grassoler.com, educacionsinfronteras.org, edicionsdau.com, aborras.com, fragmenta.cat, escolamassana.es, wesend.info, biblaria.cat, labarberia.net
+            </p>
+          </article>
+
+          <article class="js-content" data-year="2003">
+            <h2>
+              2003 - 2008 > Cap de projectes de GMI Records S.L.
+            </h2>
+
+            <p>
+              Tasques de coordinació de projectes multimèdia, seguiment i planificació de la producció, revisió, correcció i publicació WEB amb programes propis d’aquest camp. Clients diversos.
+            </p>
+
+            <p>
+              Creació i gestió del portal de la cooperativa TOTART.
+            </p>
+          </article>
+
+          <article class="js-content" data-year="2002">
+            <h2>
+              2002 > Editor multimèdia Ediciones Interactivas TUK S.L.
+            </h2>
+
+            <p>
+              Tasques de coordinació de projectes multimèdia, seguiment i planificació de la producció, revisió, correcció i publicació WEB amb programes propis d’aquest camp. Projectes en els quals he treballat: web del Zoo de Barcelona, màster en e-business de Winterthur, aplicacions multimèdia per l'editorial mèdica Doyma o l’editorial GEA,  espai de notícies de TUK, la web sobre Antoni Gaudí de e-cristians.net, edició de mòduls per Medicaula.com de Bayer ...
+            </p>
+          </article>
+
+          <article class="js-content" data-year="2000">
+            <h2>
+              2000 - 2001 > Coordinador. GMI Records S.L.
+            </h2>
+
+            <p>
+              Coordinació tant en l'àmbit organitzatiu, com de projectes.
+            </p>
+
+            <p>
+              Realització de projectes multimèdia i <abbr title="Tecnologies de la informació i la comunicació">TIC</abbr>.
+            </p>
+
+            <p>
+              Tasques d’edició de materials de formació a distància i materials multimèdia amb Flash, per compte de GMI Records, pel Laboratori Multimèdia de la UPC-Escola Superior d'Enginyers Tècnics Industrials de Barcelona, entre d’altres: materials Acrobat per Medicaula de Bayer, materials web pel màster en e-business de Winterthur, materials web per Intercrea (CREA formación), materials web pel programa INNOVA de la <abbr title="Universitat Politècnica de Catalunya">UPC</abbr> (edició de continguts en <abbr title="HyperText Markup Language">HTML</abbr> i exercicis d’autoavaluació en Flash), producció material didàctic WEB Encampus.
+            </p>
+          </article>
+
+          <picture>
+            <source media="(max-width:666px)" srcset="assets/images/projects_480w.jpg?as=webp" type="image/webp">
+            <source media="(max-width:1023px)" srcset="assets/images/projects_906w.jpg?as=webp" type="image/webp">
+            <source media="(min-width: 1440px)" srcset="assets/images/projects_2045w.jpg?as=webp" type="image/webp">
+            <source media="(min-width: 1080px)" srcset="assets/images/projects_1440w.jpg?as=webp" type="image/webp">
+            <source media="(min-width: 1024px)" srcset="assets/images/projects_1080w.jpg?as=webp" type="image/webp">
+            <img src="assets/images/projects_2045w.jpg?as=webp" alt="Mostra de projectes">
+          </picture>
+      </section>
+
+      <!-- FORMACIÓ UNIVERSITÀRIA -->
+      <section class="seccio--destacada" id="formacio-universitaria">
+          <h2>
+            Formació Universitària
+          </h2>
+
+          <ul>
+            <li>
+              2021 - <strong>Màster Universitari en Desenvolupament de llocs i aplicacions web</strong> (cursant). Universitat Oberta de Catalunya UOC.
+            </li>
+            <li>
+              2021 - <strong>Curs Intel·ligència Artificial</strong> (150 hores). Universitat Oberta de Catalunya UOC.
+            </li>
+            <li>
+              2020 - <strong>Curs Desenvolupament Back-end <abbr title="PHP: Hypertext Preprocessor">PHP</abbr></strong> (Laravel, CodeIgniter, Drupal)  (150 hores). Universitat Oberta de Catalunya UOC.
+            </li>
+            <li>
+              2020 - <strong>Curs Desenvolupament <i lang="en">Front-end</i> amb <i lang="en">Frameworks</i> JavaScript (Angular, Node js)</strong> (150 hores). Universitat Oberta de Catalunya UOC.
+            </li>
+            <li>
+              2014 - <strong>Enginyeria Tècnica en Informàtica de Gestió. Universitat Oberta de Catalunya UOC.</strong> Projecte final de carrera en aplicacions mòbils multiplataforma.
+            </li>
+            <li>
+              2014 - Certificat de Titulació Progressiva “Analista d’aplicacions”. Universitat Oberta de Catalunya UOC.
+            </li>
+            <li>
+              2011 - Certificat de Titulació Progressiva “Tecnologia Informàtica”. Universitat Oberta de Catalunya UOC.
+            </li>
+            <li>
+              2007 - Certificat de Titulació Progressiva “Programació avançada en orientació a objectes”. Universitat Oberta de Catalunya UOC.
+            </li>
+            <li>
+              1994 - Fins a tercer curs de la Llicenciatura en Ciències Biològiques. Universitat Autònoma de Barcelona UAB.
+            </li>
+          </ul>
+      </section>
+
+      <!-- FORMACIÓ CONTINUADA -->
+      <section id="formacio-continuada">
+          <h2>
+            Formació continuada
+          </h2>
+
+          <ul>
+            <li>
+              2012 - <strong>Seminario de <i lang="en">Email Marketing</i> Efectivo y Afiliación <i lang="en">Online</i>.</strong> Instituto Internacional de <i lang="en">Marketing</i>.
+            </li>
+            <li>
+              2012 - <strong>Posicionamiento en Buscadores <abbr title="Search Engine Optimization">SEO</abbr>. Instituto Internacional de <i lang="en">Marketing</i>.</strong>
+            </li>
+            <li>
+              2010 - Comunicació corporativa i construcció de marca (<i lang="en">branding</i>) en una societat digital. Universitat Oberta de Catalunya UOC.
+            </li>
+            <li>
+              2006 - <strong>Planificació de Projectes Informàtics.</strong> Universitat Oberta de Catalunya UOC.
+            </li>
+            <li>
+              2000 - Curs de Flash 5.0 (20 h), Laboratori d’Aplicacions Multimèdia de l’ETSEIB - UPC (Escola Tècnica Superior d’Enginyeria Industrial de Barcelona). 
+            </li>
+            <li>
+              2000 - Curs de formació en edició <abbr title="HyperText Markup Language 5">HTML</abbr> al Laboratori d’Aplicacions Multimèdia de l’ETSEIB - UPC (Escola Tècnica Superior d’Enginyeria Industrial de Barcelona).
+            </li>
+          </ul>
+      </section>
+
+      <!-- IDIOMES -->
+      <section class="seccio--destacada" id="idiomes">
+          <h2>
+            Idiomes
+          </h2>
+
+          <ul>
+            <li>
+              Castellà: Competència bilingüe o nativa.
+            </li>
+            <li>
+              Català: Competència bilingüe o nativa.
+            </li>
+            <li>
+              Anglès: Escrit i llegit. Competència bàsica
+            </li>
+          </ul>
+      </section>
+
+      <!--  ALTRES DADES D’INTERÈS -->
+      <section id="altres">
+          <h2>
+            Altres dades d’interès
+          </h2>
+
+          <ul>
+            <li>
+              Membre de la "Asociación de Técnicos de Informática – ATI"
+            </li>
+            <li>
+              Soci de Intermón-Oxfam
+            </li>
+          </ul>
+      </section>
+
+      <!--  MENCIONS -->
+      <section>
+        <blockquote>
+          <p>
+            "Un gran professional amb molta experiència en desenvolupament web. Persona responsable i compromesa amb l'empresa."
+          </p>
+
+          <cite>
+            <strong>Oriol Marí Pàmies, CEO a Whads Accent.</strong> Va ser el meu cap a Whads Accent.
+          </cite>
+        </blockquote>
+
+        <blockquote>
+          <p>
+            "Carles Melgarejo ha prestado un excelente servicio durante el tiempo que ha estado vinculado a BCD a través de Whads Accent, dejando constancia de su profesionalidad, sus excelentes conocimientos técnicos y su predisposición a adaptarse a escenarios y necesidades cambiantes. Sin duda, un profesional al que se le puede confiar la gestión/programación de cualquier plataforma digital corporativa."
+          </p>
+
+          <cite>
+            <strong>Carles Barbero Ciuró, Communications & Press Manager a BCD Barcelona Centre de Disseny.</strong> Va ser client de Whads Accent.</cite>
+        </blockquote>
+
+        <blockquote>
+          <p>
+            "Trabajador metódico, responsable, organizado y resolutivo. Destaco su compromiso con todos los proyectos y sus capacidades comunicativas para un excelente trabajo en equipo."
+          </p>
+
+          <cite>
+            <strong>Elena Navarro Sansano, Diseñadora freelance.</strong> Vam treballar junts en diversos projectes.</cite>
+        </blockquote>
+
+        <blockquote>
+          <p>
+            "Responsable, orientado al trabajo y con iniciativa. Predisposición para aprender. De plena confianza." 
+          </p>
+
+          <cite>
+            <strong>Toni Oró, CEO a GMI Records, ex Director d'Aposta SCCL.</strong> Va ser el meu cap a GMI Records.</cite>
+        </blockquote>
+      </section>
+    </main>
+
     <include src="./views/footer.html"></include>
+
     <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
   </body>
 </html>
