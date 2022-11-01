@@ -10,14 +10,15 @@
  *
  * GENERIC
  * Global-styles...................Estils genèrics per tota la pàgina.
- * Icones contacte.................Estils genèrics per les icones.
- * Cites i notes destacades........Estils genèrics de cites i notes.
+ * Icones..........................Estils genèrics per les icones.
+ * Cites ..........................Estils genèrics de cites.
  * Hamburger-menu-styles...........Contenidor general menú hamburguesa.
  *
  * COMPONENTS
  * Site-header-styles..............Header principal amb logo i menú.
  * Site-main-styles................Contingut principal de la pàgina. 
  * Site-footer-styles..............Footer principal de la pàgina.
+ * Menu-styles.....................Footer principal de la pàgina.
  */
 
 
@@ -30,9 +31,9 @@
 
   * {
     // Box model
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
   }
 
 
@@ -57,8 +58,8 @@
     // Typography
     font-size: 2.7rem;
     font-weight: 600;
-    color: $secondary-font-color;
     line-height: 1.6;
+    color: $secondary-font-color;
     text-align: center;
   }
 
@@ -91,6 +92,13 @@
   }
 
 
+  img {
+    // Box model
+    display: block;
+    max-width: 100%;
+  }
+
+
   picture {
     // Box model
     display: block;
@@ -105,12 +113,6 @@
     }
   }
 
-  img {
-    // Box model
-    max-width: 100%;
-    display: block;
-  }
-
 
   p,
   li,
@@ -120,8 +122,8 @@
 
     // Typography
     font-size: 1.4rem;
-    color: $main-font-color;
     line-height: 1.6;
+    color: $main-font-color;
   }
 
 
@@ -140,9 +142,9 @@
   .fa-linkedin-in {
     // Box model
     padding-top: 0.8rem;
+    padding-right: 1rem;
     padding-bottom: 0.8rem;
     padding-left: 1rem;
-    padding-right: 1rem;
 
 
     // Typography
@@ -163,38 +165,24 @@
 
 
   /**
-    * Cites i notes destacades
-    * les dues icones per accedir i tancar el menú.
+    * Cites.
     *
     * 1. Colors per les cites del final
-    * 2. Colors per la nota destacada de la Trajectòria laboral
     */
 
-  blockquote,
-  .block--destacat {
+  blockquote {
     // Box model
-    margin-bottom: 4.2rem;
     padding: 1.8rem 1.7rem 1.4rem;
+    margin-bottom: 4.2rem;
 
     // Visual
-    border-left-width: 5px;
+    background-color: #FFFBF4; /* [1] */
+    border-left-color: #9A0315; /* [1] */
     border-left-style: solid;
+    border-left-width: 5px;
   }
 
-  blockquote { /* [1] */
-    // Visual
-    background-color: #FFFBF4;
-    border-left-color: #9A0315;
-  }
-
-  .block--destacat { /* [2] */
-    // Visual
-    background-color: #f4faff;
-    border-left-color: #2197F9;
-  }
-
-  blockquote > p,
-  .block--destacat > p {
+  blockquote > p {
     // Box model
     margin-bottom: 0;
 
@@ -202,8 +190,7 @@
     font-style: italic;
   }
 
-  blockquote > cite,
-  .block--destacat > ul > li {
+  blockquote > cite {
     // Box model
     display: block;
   }
@@ -211,11 +198,6 @@
   blockquote > cite > strong {
     // Typography
     font-weight: 600;
-  }
-
-  .block--destacat > ul > li {
-    // Box model
-    margin-bottom: 0;
   }
 
 
@@ -247,18 +229,14 @@
       left: 0;
 
       // Box model
+      display: none;
       padding: 2rem 2rem 1.4rem 1.4rem;
 
       // Typography
       font-size: 3rem;
       font-weight: 700;
-      text-decoration: none;
       color: #5f030e;
-    }
-
-    .hamburger {
-      // Box model
-      display: none;
+      text-decoration: none;
     }
 
       .hamburger__open { /* [1] */
@@ -287,18 +265,16 @@
     z-index: 10;
 
     // Box model
+    height: 34.4vw;
     padding-top: 3.2rem;
     padding-bottom: 4rem;
-    height: 34.4vw;
 
     // Visual
+    visibility: visible;
     background-color: $secondary-font-color;
     box-shadow: 0 3px 16px rgb(74 74 74 / .2);
-    visibility: visible;
-    transition: opacity .5s linear;
-
-    // Misc
     opacity: 1;
+    transition: opacity .5s linear;
 
     p {
       // Typography
@@ -313,8 +289,8 @@
     // Box model
     display: block;
     width: max-content;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
 
     // Typography
     text-align: center;
@@ -325,88 +301,6 @@
     // Box model
     width: 11.2rem;
     height: auto;
-  }
-
-
-
-  /**
-    * Menú amb dues seccions fetes amb llistes desordenades ul, separant
-    * les dues icones de contacte dels elements de menú.
-    *
-    * 1. Elements de menú
-    * 2. Icones de contacte
-    */
-
-  body > header > nav {
-    aside {
-      // Positioning
-      position: absolute;
-      left: 0;
-      top: 34.4vw;
-
-      // Box model
-      width: 0;
-      height: 100vh;
-      
-      // Visual
-      background-color: #ededed;
-      transition: 0.5s;
-      overflow: hidden;
-
-      .menu-content { /* [1] */
-        // Box model
-        padding-left: 5rem;
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-        height: 75vh;
-
-        // Visual
-        background-color: #FFFBF4;
-
-        li {
-          // Box model
-          display: block;
-          padding-top: 1.2rem;
-          padding-bottom: 1.5rem;
-          
-          // Typography
-          font-family: $font-family-sans-serif;
-          font-size: 1.7rem;
-          line-height: 1;
-          font-weight: 800;
-          color: #9B9A9A;
-          text-transform: uppercase;
-          text-decoration: none;
-        }
-
-        .active {
-          // Typography
-          color: #5F030E;
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
-
-  .social-media { /* [2] */
-    // Box model
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-left: 5rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-     width: 18rem;
-
-    li {
-      // Box model
-      margin-bottom: 0;
-
-      a {
-        // Box model
-        display: block;
-      }
-    }
   }
 
 
@@ -426,25 +320,53 @@
   }
 
 
+  main > section > h2, main > section > ul, 
+  article {
+    // Box model
+    padding-top: 3rem;
+    padding-right: 4.5rem;
+    padding-left: 4.5rem;
+  }
+
+
+  /**
+    * Els continguts de cada any estan ocults fins que es fa click a una
+    * etiqueta d'any. El contingut de la primera és visible.
+    *
+    * 1. Contingut de cada any
+    * 2. Any visible
+    */
+
+  main > section:nth-of-type(2) article { /* [1] */
+    // Box model
+    display: none;
+  }
+
+
+  main > section:nth-of-type(2) .show-year-content { /* [2] */
+    // Box model
+    display: block;
+  }
+
+
+  main > section:nth-of-type(2) article > h2 {
+    // Typography
+    font-size: 1.6rem;
+    color: $main-font-color;
+  }
+
+
   main > section,
   main > section:nth-of-type(1) article:nth-of-type(3) {
     // Visual
     scroll-margin-top: 14rem;
   }
 
-  main > section > h2, main > section > ul, 
-  article {
-    // Box model
-    padding-top: 3rem;
-    padding-left: 4.5rem;
-    padding-right: 4.5rem;
-  }
-
 
   main > section > ul {
     // Box model
-    padding-left: 5.8rem;
     padding-top: 0;
+    padding-left: 5.8rem;
   }
 
   main > section > article > ul {
@@ -492,6 +414,29 @@
 
 
 
+  /**
+    * Contenidor de les icones de contacte
+    */
+
+  .social-media {
+    // Box model
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 18rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 5rem;
+
+    li {
+      // Box model
+      margin-bottom: 0;
+
+      a {
+        // Box model
+        display: block;
+      }
+    }
+  }
 
 
   /**
@@ -510,8 +455,8 @@
     // Box model
     padding-top: 0;
     padding-left: 4.7rem;
-    white-space: nowrap; /* [1] */
     overflow: auto; /* [2] */
+    white-space: nowrap; /* [1] */
 
     // Visual
     scrollbar-width: none; /* [3] */
@@ -524,10 +469,10 @@
   .submenu-carroussel > li { /* [5] */
     // Box model
     display: inline-block;
-    margin-bottom: 0;
-    margin-right: 1.6rem;
-    padding: 0.5rem 1.5rem;
     width: max-content;
+    padding: 0.5rem 1.5rem;
+    margin-right: 1.6rem;
+    margin-bottom: 0;
 
     // Typography
     font-weight: 800;
@@ -538,31 +483,36 @@
   }
 
 
-
   /**
-    * Els continguts de cada any estan ocults fins que es fa click a una
-    * etiqueta d'any. El contingut de la primera és visible.
+    * Notes destacades
     *
-    * 1. Contingut de cada any
-    * 2. Any visible
+    * 1. Colors per la nota destacada de la Trajectòria laboral
     */
 
-  section:nth-of-type(2) article { /* [1] */
+  .block--destacat {
     // Box model
-    display: none;
+    padding: 1.8rem 1.7rem 1.4rem;
+    margin-bottom: 4.2rem;
+
+    // Visual
+    background-color: #f4faff; /* [1] */
+    border-left-color: #2197F9; /* [1] */
+    border-left-style: solid;
+    border-left-width: 5px;
   }
 
+  .block--destacat > p {
+    // Box model
+    margin-bottom: 0;
 
-  section:nth-of-type(2) .showYearContent { /* [2] */
+    // Typography
+    font-style: italic;
+  }
+
+  .block--destacat > ul > li {
     // Box model
     display: block;
-  }
-
-
-  section:nth-of-type(2) article > h2 {
-    // Typography
-    font-size: 1.6rem;
-    color: $main-font-color;
+    margin-bottom: 0;
   }
 
 
@@ -595,8 +545,8 @@
     // Typography
     font-weight: 600;
     color: $secondary-font-color;
-    text-decoration: none;
     text-align: center;
+    text-decoration: none;
   }
 
 
@@ -608,10 +558,75 @@
 
   .site-footer .social-media {
     // Box model
-    margin-left: auto;
-    margin-right: auto;
+    width: 12rem;
     padding-top: 3rem;
     padding-bottom: 3rem;
     padding-left: 0;
-    width: 12rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+
+
+
+
+/*------------------------------------*\
+  #MENU-STYLES
+\*------------------------------------*/
+
+  /**
+    * Menú fet amb llistes desordenades ul.
+    *
+    * 1. Elements de menú
+    */
+
+  body > header > nav {
+    aside {
+      // Positioning
+      position: absolute;
+      top: 34.4vw;
+      left: 0;
+
+      // Box model
+      width: 0;
+      height: 100vh;
+      
+      // Visual
+      overflow: hidden;
+      background-color: #ededed;
+      transition: 0.5s;
+
+      .menu-content { /* [1] */
+        // Box model
+        height: 75vh;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        padding-left: 5rem;
+
+        // Visual
+        background-color: #FFFBF4;
+
+        li {
+          // Box model
+          display: block;
+          padding-top: 1.2rem;
+          padding-bottom: 1.5rem;
+          
+          // Typography
+          font-family: $font-family-sans-serif;
+          font-size: 1.7rem;
+          font-weight: 800;
+          line-height: 1;
+          color: #9B9A9A;
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+
+        .active {
+          // Typography
+          color: #5F030E;
+          text-decoration: underline;
+        }
+      }
+    }
   }

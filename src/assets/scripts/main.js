@@ -15,6 +15,12 @@
   console.log(`Hello, ${university}!`);
 } )();
 
+
+
+/**
+ * Controls menú hamburguesa
+ */
+
 const btn_open = document.querySelector(".js-open");
 const btn_close = document.querySelector(".js-close");
 
@@ -38,20 +44,31 @@ function closeNav() {
   document.querySelector(".js-menu-content").style.width = "0";
 }
 
+
+
+/**
+ * Accions etiquetes anys
+ */
+
 document.querySelectorAll(".js-btn").forEach( elem => {
   elem.addEventListener("click", e => {
     document.querySelectorAll(".js-content").forEach( contentElem => {
-      contentElem.classList.remove("showYearContent");
+      contentElem.classList.remove("show-year-content");
 
       var contentYear = contentElem.dataset.year;
 
       if (contentYear == e.target.dataset.year) {
-        contentElem.classList.add("showYearContent");
+        contentElem.classList.add("show-year-content");
       }
     });
   });
 });
 
+
+
+/**
+ * Click a element de menú
+ */
 
 document.querySelectorAll(".js-scroll").forEach( elem => {
   elem.addEventListener("click", e => {
