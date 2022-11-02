@@ -73,5 +73,28 @@ document.querySelectorAll(".js-btn").forEach( elem => {
 document.querySelectorAll(".js-scroll").forEach( elem => {
   elem.addEventListener("click", e => {
     document.getElementById(e.target.dataset.target).scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
+    if (window.innerWidth < 768) {
+      closeNav();
+    }
+    
   });
 });
+
+
+/**
+ * Listener per saber si s'ha redimensionat la finestra
+ */
+
+function windowResizeListener() {
+  if (window.innerWidth > 767) {
+    document.querySelector(".js-open").style.display = "none";
+    document.querySelector(".js-close").style.display = "none";
+    document.querySelector(".js-menu-content").style.width = "100%";
+  }else{
+    document.querySelector(".js-open").style.display = "block";
+    document.querySelector(".js-close").style.display = "none";
+    document.querySelector(".js-menu-content").style.width = "0";
+  }
+}
+
+window.addEventListener("resize", windowResizeListener);

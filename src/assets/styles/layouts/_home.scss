@@ -9,19 +9,34 @@
  * _variables.scss.................Variables globals.
  *
  * GENERIC
+ * _header.scss....................Header principal amb logo i menú. 
+ *    Hamburger-menu-styles........Contenidor general menú hamburguesa.
+ * _footer.scss....................Footer principal de la pàgina.
+ *
  * Global-styles...................Estils genèrics per tota la pàgina.
  * Icones..........................Estils genèrics per les icones.
  * Cites ..........................Estils genèrics de cites.
- * Hamburger-menu-styles...........Contenidor general menú hamburguesa.
+
  *
  * COMPONENTS
- * Site-header-styles..............Header principal amb logo i menú.
  * Site-main-styles................Contingut principal de la pàgina. 
- * Site-footer-styles..............Footer principal de la pàgina.
  * Menu-styles.....................Footer principal de la pàgina.
  */
 
+  @use "sass:map";
 
+
+  /**
+   * Importem el parcial header
+   */
+
+  @import "header";
+
+  /**
+   * Importem el parcial footer
+   */
+
+  @import "footer";
 
 
 
@@ -41,15 +56,19 @@
     // Typography
     font-family: $font-family-sans-serif;
     font-size: 2.4vw;
-    color: $main-font-color;
+    color: map.get($theme-colors, "main-font-color");
 
-    @media screen and (min-width: 667px){
-      font-size: 0.8vw;
+    @media screen and (min-width: 768px) {
+      font-size: 1.2vw;
     }
 
-     @media screen and (min-width: 1030px){
+    @media screen and (min-width: 1024px) {
+      font-size: .8vw;
+    }
+
+    @media screen and (min-width: 1440px) {
       font-size: 10px;
-    }   
+    }
   }
 
 
@@ -67,10 +86,14 @@
     font-size: 2.7rem;
     font-weight: 600;
     line-height: 1.6;
-    color: $secondary-font-color;
+    color: map.get($theme-colors, "secondary-font-color");
     text-align: center;
 
-    @media screen and (min-width: 1030px){
+    @media screen and (min-width: 768px) {
+      // Box model
+      max-width: 120rem;
+      margin: 0 auto;
+
       // Typography
       font-size: 4.4rem;
       font-weight: 400;
@@ -85,13 +108,13 @@
     
     // Typography
     font-size: 2.2rem;
-    color: #A6A5A5;
+    color: map.get($theme-colors, "grey-titles");
   }
 
 
   a {
     // Typography
-    color: $main-font-color;
+    color: map.get($theme-colors, "main-font-color");
   }
 
 
@@ -120,7 +143,7 @@
     margin-bottom: 8rem;
 
     // Visual
-    box-shadow: 0 5px 8px #4a4a4a33;
+    box-shadow: 0 5px 8px rgb(74 74 74 / .2);
 
     img {
       // Box model
@@ -138,16 +161,16 @@
     // Typography
     font-size: 1.4rem;
     line-height: 1.6;
-    color: $main-font-color;
+    color: map.get($theme-colors, "main-font-color");
 
-    @media screen and (min-width: 1030px){
+    @media screen and (min-width: 768px) {
       // Box model
       margin-bottom: 1.4rem;
 
       // Typography
       font-size: 1.3rem;
       line-height: 1.4;
-    } 
+    }
   }
 
 
@@ -165,25 +188,25 @@
 
   .fa-linkedin-in {
     // Box model
-    padding-top: 0.8rem;
+    padding-top: .8rem;
     padding-right: 1rem;
-    padding-bottom: 0.8rem;
+    padding-bottom: .8rem;
     padding-left: 1rem;
 
 
     // Typography
     font-size: 2.5rem;
-    color: $secondary-font-color;
+    color: map.get($theme-colors, "secondary-font-color");
 
     // Visual
-    background-color: #bdbdbd;
+    background-color: map.get($theme-colors, "grey-icons");
     border-radius: 2.2rem;
   }
 
   .fa-envelope {
     // Typography
     font-size: 4.2rem;
-    color: #bdbdbd;
+    color: map.get($theme-colors, "grey-icons");
   }
 
 
@@ -200,8 +223,8 @@
     margin-bottom: 4.2rem;
 
     // Visual
-    background-color: #FFFBF4; /* [1] */
-    border-left-color: #9A0315; /* [1] */
+    background-color: map.get($theme-colors, "block-quote-background"); /* [1] */
+    border-left-color: map.get($theme-colors, "site-red"); /* [1] */
     border-left-style: solid;
     border-left-width: 5px;
   }
@@ -229,128 +252,6 @@
 
 
 /*------------------------------------*\
-  #HAMBURGER-MENU-STYLES
-\*------------------------------------*/
-
-  /**
-    * Menú hamburguesa. Aquí només definim el contenidor general i
-    * les dues icones per accedir i tancar el menú.
-    *
-    * 1. Icona per obrir el menú
-    * 2. Icona per tancar el menú
-    */
-
-  .hamburger-menu {
-    // Positioning
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    .hamburger {
-      // Positioning
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      // Box model
-      display: none;
-      padding: 2rem 2rem 1.4rem 1.4rem;
-
-      // Typography
-      font-size: 3rem;
-      font-weight: 700;
-      color: #5f030e;
-      text-decoration: none;
-    }
-
-      .hamburger__open { /* [1] */
-        // Box model
-        display: block;
-
-        @media screen and (min-width: 1030px){
-          // Box model
-          display: none;
-        }
-      }
-
-      .hamburger__close { /* [2] */
-        // Positioning
-        left: 5px;
-      }
-
-    @media screen and (min-width: 1030px){
-      // Positioning
-      position: initial;
-    }
-  }
-
-
-
-
-
-/*------------------------------------*\
-  #SITE-HEADER-STYLES
-\*------------------------------------*/
-
-  body > header {
-    // Positioning
-    position: sticky;
-    top: 0;
-    z-index: 10;
-
-    // Box model
-    height: 34.4vw;
-    padding-top: 3.2rem;
-    padding-bottom: 4rem;
-
-    // Visual
-    visibility: visible;
-    background-color: $secondary-font-color;
-    box-shadow: 0 3px 16px rgb(74 74 74 / .2);
-    opacity: 1;
-    transition: opacity .5s linear;
-
-    p {
-      // Typography
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: #5f030e;
-    }
-
-    @media screen and (min-width: 1030px){
-      // Box model
-      height: auto;
-      padding-top: 4rem;
-      padding-bottom: 0;
-    }  
-  }
-
-
-  body > header > div {
-    // Box model
-    display: block;
-    width: max-content;
-    margin-right: auto;
-    margin-left: auto;
-
-    // Typography
-    text-align: center;
-    text-decoration: none;
-  }
-
-  body > header > div > img {
-    // Box model
-    width: 11.2rem;
-    height: auto;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-
-
-
-
-/*------------------------------------*\
   #SITE-MAIN-STYLES
 \*------------------------------------*/
 
@@ -360,21 +261,31 @@
     background-repeat: no-repeat;
     background-position: top left;
     background-size: cover;
+
+    @media screen and (min-width: 768px) {
+      // Visual
+      background-image: url("../images/background_1080w.jpg");
+    }
+
+    @media screen and (min-width: 1440px) {
+      // Visual
+      background-image: url("../images/background_1440w.jpg");
+    }
   }
 
 
   main > section {
-    @media screen and (min-width: 1030px){
+    @media screen and (min-width: 768px) {
       // Box model
       padding-bottom: 2rem;
     }
 
-    @media screen and (min-width: 1440px){
+    @media screen and (min-width: 1440px) {
       // Box model
       max-width: 1440px;
       margin-right: auto;
       margin-left: auto;
-    }  
+    }
   }
 
 
@@ -400,10 +311,10 @@
     // Box model
     display: none;
 
-    @media screen and (min-width: 1030px){
+    @media screen and (min-width: 768px) {
       // Box model
       padding-bottom: 3rem;
-    }  
+    }
   }
 
 
@@ -416,37 +327,37 @@
   main > section:nth-of-type(2) article > h2 {
     // Typography
     font-size: 1.6rem;
-    color: $main-font-color;
+    color: map.get($theme-colors, "main-font-color");
   }
 
 
   main > section,
-  main > section:nth-of-type(1) article:nth-of-type(3) {
+  main > section:nth-of-type(1) > article:nth-of-type(1) {
     // Visual
     scroll-margin-top: 14rem;
 
-    @media screen and (min-width: 1030px){
+    @media screen and (min-width: 768px) {
       // Visual
       scroll-margin-top: 16.8rem;
-    }  
+    }
   }
 
 
 
   main > section:nth-of-type(1) {
-    @media screen and (min-width: 1030px){
+    @media screen and (min-width: 768px) {
       // Box model
       display: grid;
       grid-template-columns: 1.8fr 1.2fr;
-    }  
+    }
   }
 
   main > section:nth-of-type(1) div {
-    @media screen and (min-width: 1030px){
+    @media screen and (min-width: 768px) {
       // Box model
       display: flex;
       flex-direction: row-reverse;
-    }  
+    }
   }
 
 
@@ -474,10 +385,10 @@
     width: 100rem;
     height: auto;
 
-    @media screen and (min-width: 1030px){
+    @media screen and (min-width: 768px) {
       // Box model
       width: 283px;
-    }  
+    }
   }
 
 
@@ -485,7 +396,7 @@
     // Box model
     padding: 7rem 2.2rem 2.2rem 2rem;
 
-    @media screen and (min-width: 1030px){
+    @media screen and (min-width: 768px) {
       // Box model
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -513,20 +424,20 @@
     padding-bottom: 1.5rem;
 
     // Visual
-    background-color: $carles-bg; /* [1] */
+    background-color: $bckgr; /* [1] */
 
-    @media screen and (min-width: 1030px){
+    @media screen and (min-width: 768px) {
       // Box model
       padding-bottom: 2.5rem;
-    }  
+    }
   }
 
   main > section:nth-of-type(1) > .seccio--destacada {
-    @media screen and (min-width: 1030px){
+    @media screen and (min-width: 768px) {
       // Visual
-      background-color: $secondary-font-color;
+      background-color: map.get($theme-colors, "secondary-font-color");
       scroll-margin-top: 16.8rem;
-    }  
+    }
   }
 
 
@@ -554,7 +465,7 @@
       }
     }
 
-    @media screen and (min-width: 1030px){
+    @media screen and (min-width: 768px) {
       // Box model
       display: none;
     }
@@ -592,18 +503,18 @@
     // Box model
     display: inline-block;
     width: max-content;
-    padding: 0.5rem 1.5rem;
+    padding: .5rem 1.5rem;
     margin-right: 1.6rem;
     margin-bottom: 0;
 
     // Typography
     font-weight: 800;
-    color: #A6A5A5;
+    color: map.get($theme-colors, "grey-titles");
 
     // Visual
-    background-color: #F5F5F5;
+    background-color: map.get($theme-colors, "grey-background");
 
-    @media screen and (min-width: 1030px){
+    @media screen and (min-width: 768px) {
       // Misc
       cursor: pointer;
     }
@@ -622,12 +533,12 @@
     margin-bottom: 4.2rem;
 
     // Visual
-    background-color: #f4faff; /* [1] */
-    border-left-color: #2197F9; /* [1] */
+    background-color: map.get($theme-colors, "background-highlighted-blue"); /* [1] */
+    border-left-color: map.get($theme-colors, "border-highlighted-blue"); /* [1] */
     border-left-style: solid;
     border-left-width: 5px;
 
-    @media screen and (min-width: 1030px){
+    @media screen and (min-width: 768px) {
       // Box model
       width: 55.3rem;
       margin-top: 3.5rem;
@@ -647,78 +558,6 @@
     // Box model
     display: block;
     margin-bottom: 0;
-  }
-
-
-
-
-
-/*------------------------------------*\
-  #SITE-FOOTER-STYLES
-\*------------------------------------*/
-
-  .site-footer {
-    // Box model
-    padding: 3rem 4.5rem;
-
-    // Visual
-    background-color: #525151;
-  }
-
-  .site-footer > p {
-    // Typography
-    color: $secondary-font-color;
-    text-align: center;
-  }
-
-
-  .site-footer > ul {
-    @media screen and (min-width: 1030px){
-      // Typography
-      text-align: center;
-    } 
-  }
-
-
-  .site-footer > ul > li {
-    // Box model
-    margin-bottom: 1.2rem;
-
-    // Typography
-    font-weight: 600;
-    color: $secondary-font-color;
-    text-align: center;
-    text-decoration: none;
-
-    @media screen and (min-width: 1030px){
-      // Box model
-      display: initial;
-      padding-right: 1.4rem;
-      padding-left: 1.4rem;
-      cursor: pointer;
-    } 
-  }
-
-
-
-  /**
-    * En el footer modifiquem una mica la caixa de les icones de contacte
-    * perquè quedi millor integrada al footer.
-    */
-
-  .site-footer .social-media {
-    // Box model
-    width: 12rem;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    padding-left: 0;
-    margin-right: auto;
-    margin-left: auto;
-
-    @media screen and (min-width: 1030px){
-      // Box model
-      display: grid;
-    }
   }
 
 
@@ -748,18 +587,18 @@
       
       // Visual
       overflow: hidden;
-      background-color: #ededed;
-      transition: 0.5s;
+      background-color: map.get($theme-colors, "grey-background");
+      transition: .5s;
 
       .menu-content { /* [1] */
         // Box model
-        height: 75vh;
+        height: 60vh;
         padding-top: 4rem;
         padding-bottom: 4rem;
         padding-left: 5rem;
 
         // Visual
-        background-color: #FFFBF4;
+        background-color: map.get($theme-colors, "block-quote-background");
 
         li {
           // Box model
@@ -772,23 +611,28 @@
           font-size: 1.7rem;
           font-weight: 800;
           line-height: 1;
-          color: #9B9A9A;
+          color: map.get($theme-colors, "grey-titles");
           text-decoration: none;
           text-transform: uppercase;
 
-          @media screen and (min-width: 1030px){
+          @media screen and (min-width: 768px) {
             // Box model
-            display: initial;
+            display: inline-block;
             padding-right: 1.4rem;
             padding-left: 1.4rem;
             margin-bottom: 0;
           }
+
+          @media screen and (min-width: 1024px) {
+            // Box model
+            display: initial;
+          }
         }
 
         li:hover {
-          @media screen and (min-width: 1030px){
+          @media screen and (min-width: 768px) {
             // Typography
-            color: #5F030E;
+            color: map.get($theme-colors, "site-red");
             text-decoration: underline;
 
             // Misc
@@ -798,11 +642,11 @@
 
         .active {
           // Typography
-          color: #5F030E;
+          color: map.get($theme-colors, "site-red");
           text-decoration: underline;
         }
 
-        @media screen and (min-width: 1030px){
+        @media screen and (min-width: 768px) {
           // Box model
           height: auto;
           padding-top: 1rem;
@@ -813,18 +657,18 @@
           text-align: center;
 
           // Visual
-          background-color: $secondary-font-color;
+          background-color: map.get($theme-colors, "secondary-font-color");
         }
       }
 
-      @media screen and (min-width: 1030px){
+      @media screen and (min-width: 768px) {
         // Positioning
         position: initial;
 
         // Box model
         width: 100%;
         height: auto;
-        background-color: $secondary-font-color;
+        background-color: map.get($theme-colors, "secondary-font-color");
       }
     }
   }

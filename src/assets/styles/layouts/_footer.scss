@@ -1,0 +1,67 @@
+/*------------------------------------*\
+  #SITE-FOOTER-STYLES
+\*------------------------------------*/
+
+  .site-footer {
+    // Box model
+    padding: 3rem 4.5rem;
+
+    // Visual
+    background-color: map.get($theme-colors, "footer-background");
+  }
+
+  .site-footer > p {
+    // Typography
+    color: map.get($theme-colors, "secondary-font-color");
+    text-align: center;
+  }
+
+
+  .site-footer > ul {
+    @media screen and (min-width: 768px) {
+      // Typography
+      text-align: center;
+    }
+  }
+
+
+  .site-footer > ul > li {
+    // Box model
+    margin-bottom: 1.2rem;
+
+    // Typography
+    font-weight: 600;
+    color: map.get($theme-colors, "secondary-font-color");
+    text-align: center;
+    text-decoration: none;
+
+    @media screen and (min-width: 768px) {
+      // Box model
+      display: initial;
+      padding-right: 1.4rem;
+      padding-left: 1.4rem;
+      cursor: pointer;
+    }
+  }
+
+
+
+  /**
+    * En el footer modifiquem una mica la caixa de les icones de contacte
+    * perquè quedi millor integrada al footer.
+    */
+
+  .site-footer .social-media {
+    // Box model
+    width: 12rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media screen and (min-width: 768px) {
+      // Box model
+      display: grid;
+    }
+  }

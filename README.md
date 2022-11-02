@@ -1,4 +1,4 @@
-# UOC Boilerplate
+# UOC Boilerplate PAC1
 
 UOC Boilerplate is a starter template for the HTML and CSS Tools courses from the [Master's Program in Multimedia Applications](https://estudis.uoc.edu/ca/masters-universitaris/aplicacions-multimedia/presentacio) and the [Master's Program in Web App and Website Development](https://estudis.uoc.edu/ca/masters-universitaris/desenvolupament-llocs-aplicacions-web/presentacio) at the [Universitat Oberta de Catalunya](https://www.uoc.edu). It aims to provide a basic, modern frontend web development starter pack based on Parcel and including a Sass compiler, an ES6 transpiler, minifiers, an image transformer, and development tools.
 
@@ -66,3 +66,15 @@ Always run the following commands during the development stage and for productio
 Feel free to create a [new issue](https://github.com/uoc-advanced-html-css/uoc-boilerplate/issues/new/) or drop me a line at jorditarrida@uoc.edu.
 
 Are you using this Boilerplate for your projects or for educational purposes? I would love to hear about it!
+
+## PAC1
+
+### Objectius
+
+- Dissenyar i executar un petit lloc web responsive d’una sola pàgina.
+- Utilitzar un workflow de desenvolupament frontend modern, partint de UOC Boilerplate.
+- Utilitzar el llenguatge de preprocessat d’estils Sass.
+- Escollir criteris de desenvolupament (metodologies i guies d’estil) adequats per al tipus d’encàrrec.
+- Configurar i usar correctament Stylelint en funció dels criteris escollits.
+- Documentar el procés de tria i aplicació dels criteris escollits, així com el propi procés de desenvolupament.
+- Publicar el repositori a GitHub i fer un deployment a Netlify.

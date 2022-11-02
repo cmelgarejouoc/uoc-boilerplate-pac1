@@ -1,0 +1,117 @@
+/*------------------------------------*\
+  #HAMBURGER-MENU-STYLES
+\*------------------------------------*/
+
+  /**
+    * Menú hamburguesa. Aquí només definim el contenidor general i
+    * les dues icones per accedir i tancar el menú.
+    *
+    * 1. Icona per obrir el menú
+    * 2. Icona per tancar el menú
+    */
+
+  .hamburger-menu {
+    // Positioning
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .hamburger {
+      // Positioning
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      // Box model
+      display: none;
+      padding: 2rem 2rem 1.4rem 1.4rem;
+
+      // Typography
+      font-size: 3rem;
+      font-weight: 700;
+      color: map.get($theme-colors, "site-red");
+      text-decoration: none;
+    }
+
+      .hamburger__open { /* [1] */
+        // Box model
+        display: block;
+
+        @media screen and (min-width: 768px) {
+          // Box model
+          display: none;
+        }
+      }
+
+      .hamburger__close { /* [2] */
+        // Positioning
+        left: 5px;
+      }
+
+    @media screen and (min-width: 768px) {
+      // Positioning
+      position: initial;
+    }
+  }
+
+
+
+
+
+/*------------------------------------*\
+  #SITE-HEADER-STYLES
+\*------------------------------------*/
+
+  body > header {
+    // Positioning
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    // Box model
+    height: 34.4vw;
+    padding-top: 3.2rem;
+    padding-bottom: 4rem;
+
+    // Visual
+    visibility: visible;
+    background-color: map.get($theme-colors, "secondary-font-color");
+    box-shadow: 0 3px 16px rgb(74 74 74 / .2);
+    opacity: 1;
+    transition: opacity .5s linear;
+
+    p {
+      // Typography
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: map.get($theme-colors, "site-red");
+    }
+
+    @media screen and (min-width: 768px) {
+      // Box model
+      height: auto;
+      padding-top: 4rem;
+      padding-bottom: 0;
+    }
+  }
+
+
+  body > header > div {
+    // Box model
+    display: block;
+    width: max-content;
+    margin-right: auto;
+    margin-left: auto;
+
+    // Typography
+    text-align: center;
+    text-decoration: none;
+  }
+
+  body > header > div > img {
+    // Box model
+    width: 11.2rem;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+  }

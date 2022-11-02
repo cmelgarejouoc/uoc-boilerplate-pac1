@@ -1,11 +1,21 @@
-@use "sass:color";
-
 $font-family-sans-serif: Raleway, Arial, sans-serif;
 
-$main-font-color: #000;
-$secondary-font-color: #fff;
+$theme-colors: (
+  "background-highlighted-blue": #f4faff,
+  "block-quote-background": #fffbf4,
+  "border-highlighted-blue": #2197F9,
+  "footer-background": #525151,
+  "grey-icons": #bdbdbd,
+  "grey-background": #f5f5f5,
+  "grey-titles": #a6a5a5,
+  "main-font-color": #000,
+  "secondary-font-color": #fff,
+  "site-red": #9a0315
+);
 
-$carles-highlight: #ccc;
-$carles-bg: color.scale($carles-highlight, $lightness: 80%);
+@use "sass:color";
+
+$highlight: #ccc;
+$bckgr: color.scale($highlight, $lightness: 80%);
 
 $mqMinWidth: 667px;

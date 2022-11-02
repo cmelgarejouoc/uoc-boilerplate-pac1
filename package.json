@@ -24,17 +24,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uoc-advanced-html-css/uoc-boilerplate.git"
+    "url": "git+https://github.com/cmelgarejouoc/uoc-boilerplate-pac1.git"
   },
   "author": {
-    "name": "Jordi Tarrida",
-    "email": "jorditarrida@uoc.edu"
+    "name": "Carles Melgarejo",
+    "email": "cmelgarejo@uoc.edu"
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/uoc-advanced-html-css/uoc-boilerplate/issues"
   },
-  "homepage": "https://github.com/uoc-advanced-html-css/uoc-boilerplate#readme",
+  "homepage": "https://github.com/cmelgarejouoc/uoc-boilerplate-pac1#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.7.0",
     "autoprefixer": "^10.4.8",
