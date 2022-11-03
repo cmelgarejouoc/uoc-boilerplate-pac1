@@ -22,7 +22,7 @@
 - Sass: variables, nesting, funcions (sass:color, sass:map), parcials (_home.scss, _header.scss, _footer.scss) i importació (_home.scss, _header.scss, _footer.scss).
 
 Disseny: https://www.figma.com/file/tEVNwRNQogjlcRO0bjdDHh/PAC1---Eines-HTML-II?node-id=0%3A1
-URL web pública: https://main--dulcet-salmiakki-321323.netlify.app/
+URL web pública (deployment a Netlify): https://main--dulcet-salmiakki-321323.netlify.app/
 
 
 
