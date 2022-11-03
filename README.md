@@ -17,7 +17,7 @@
 - Dependència externa a UOC Boilerplate: FontAwesome
 - Metodologies i guies d’estil: metodologia BEM i guies Harry Roberts i @mdo (Mark Otto)
 - Plugins Stylelint: stylelint-scss, stylelint-config-recommended-scss
-- Normes: at-rule-no-unknown, block-opening-brace-newline, block-opening-brace-space-before, comment-no-empty, declaration-block-semicolon-newline-after,
+- Normes Stylelint: at-rule-no-unknown, block-opening-brace-newline, block-opening-brace-space-before, comment-no-empty, declaration-block-semicolon-newline-after,
   number-leading-zero, scss/at-rule-no-unknown, scss/comment-no-empty, selector-class-pattern (BEM)
 - Sass: variables, nesting, funcions (sass:color, sass:map), parcials (_home.scss, _header.scss, _footer.scss) i importació (_home.scss, _header.scss, _footer.scss).
 
