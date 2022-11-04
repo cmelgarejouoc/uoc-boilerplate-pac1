@@ -18,7 +18,7 @@
 
 
 /**
- * Controls menú hamburguesa
+ * Controls obertura i tancament menú hamburguesa
  */
 
 const btn_open = document.querySelector(".js-open");
@@ -47,7 +47,11 @@ function closeNav() {
 
 
 /**
- * Accions etiquetes anys
+ * Accions etiquetes anys. Al fer click a una etiqueta d'any
+ * s'amaga el contingut de l'any que teníem (eliminant la
+ * classe show-year-content) i mostrem l'any que hi ha a l'atribut
+ * data-year de l'element amb classe js-content que coincideixi
+ * amb l'atribut data-year de l'element amb classe js-btn
  */
 
 document.querySelectorAll(".js-btn").forEach( elem => {
@@ -67,7 +71,8 @@ document.querySelectorAll(".js-btn").forEach( elem => {
 
 
 /**
- * Click a element de menú
+ * Click a element de menú que fa scroll fins a la secció
+ * desitjada i oculta el menú després
  */
 
 document.querySelectorAll(".js-scroll").forEach( elem => {
@@ -83,6 +88,7 @@ document.querySelectorAll(".js-scroll").forEach( elem => {
 
 /**
  * Listener per saber si s'ha redimensionat la finestra
+ * i mostrar o no l'icona del menú hamburguesa
  */
 
 function windowResizeListener() {
